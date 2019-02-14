@@ -1,0 +1,13 @@
+.container {
+  padding: 30px 10%;
+}
+
+.split {
+  /* This fills the remaining space, by using flexbox.
+     Every toolbar row uses a flexbox row layout. */
+  flex: 1 1 auto;
+}
+
+.text-icon {
+  margin-left: 5px;
+}
