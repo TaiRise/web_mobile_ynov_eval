@@ -32,7 +32,7 @@ export class SignUpComponent implements OnInit {
   ]);
 
   ngOnInit() {
-    // this.userService.getAll().subscribe(console.log);
+    this.userService.getAll().subscribe(console.log);
   }
 
   get formErros(): boolean {
