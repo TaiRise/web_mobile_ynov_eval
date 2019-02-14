@@ -1,3 +1,22 @@
-<p>
-  news-create works!
-</p>
+<div class="create-news">
+  <h1>New Event</h1>
+  <form class="form-news" #formNews="ngForm" (ngSubmit)="onSubmit()">
+    <mat-form-field>
+      <input matInput #title name="title" type="text" [(ngModel)]="news.title" placeholder="Title" required />
+      <mat-error>title required</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput #content name="content" type="text" [(ngModel)]="news.content" placeholder="Content" required />
+      <mat-error>Content required</mat-error>
+    </mat-form-field>
+
+    <div>
+      <button [disabled]="formNews.invalid" mat-raised-button color="primary" type="submit">Create</button>
+    </div>
+  </form>
+</div>
+
+
+
+
