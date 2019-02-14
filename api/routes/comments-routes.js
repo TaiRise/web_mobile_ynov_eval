@@ -1,64 +1,51 @@
 let express = require('express');
 let router = express.Router();
 let {
-  createNew,
-  updateNew,
-  deleteNew,
-} = require('../controllers/news-controller');
+  createComment,
+  updateComment,
+  deleteComment,
+} = require('../controllers/comments-controller');
 let {
   isAdmin
 } = require('../utils/validate-user');
 
 /**
- * @typedef New
+ * @typedef Comment
+ * @property {id} new.required
  * @property {string} title.required
- * @property {string} content.required
+ * @property {content} content.required
  * @property {id} author.required
- * @property {array} comments
  */
 
 /**
- * @route GET /api/news
- * @group News - Operations about News
- * @returns {object} 200 - An array of all News
- * @returns {Error} - Unexpected error
- */
-/**
- * @route POST /api/news
- * @group News - Operations about news
+ * @route POST /api/comments
+ * @group Comments - Operations about comments
+ * @property {id} new.required
  * @property {string} title.required
- * @property {string} content.required
+ * @property {content} content.required
  * @property {id} author.required
- * @property {array} comments
  * @returns {object} 200 - An array of event that's been added
  * @returns {Error} - Unexpected error
  */
 router.route('/')
-  .post(isAdmin, createNew);
+  .post(isAdmin, createComment);
 
 /**
- * @route GET /api/news/:id
- * @group News - Operations about news
- * @param {id} id - id to get new
- * @returns {object} 200 - An array of id's new
- * @returns {Error} - Unexpected error
- */
-/**
- * @route PUT /api/news/:id
- * @group News - Operations about news
- * @param {id} id - id to update new
+ * @route PUT /api/comments/:id
+ * @group Comments - Operations about comments
+ * @param {id} id - id to update comment
  * @returns {object} 200 - An array of id's new updadeted
  * @returns {Error} - Unexpected error
  */
 /**
- * @route DELETE /api/news/:id
- * @group News - Operations about news
- * @param {id} id - id to delete new
+ * @route DELETE /api/comments/:id
+ * @group Comments - Operations about comments
+ * @param {id} id - id to delete comment
  * @returns {object} 200 - New deleted
  * @returns {Error} - Unexpected error
  */
 router.route('/:id')
-  .put(isAdmin, updateNew)
-  .delete(isAdmin, deleteNew);
+  .put(isAdmin, updateComment)
+  .delete(isAdmin, deleteComment);
 
 module.exports = router;

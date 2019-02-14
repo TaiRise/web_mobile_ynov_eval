@@ -32,12 +32,12 @@ Schema.virtual('comments', {
   foreignField: 'new'
 })
 
-Schema.pre('findOne', autoPopulateComments)
-Schema.pre('find', autoPopulateComments)
+Schema.pre('findById', autoPopulate)
+Schema.pre('find', autoPopulate)
 
 module.exports = mongoose.model("News", Schema);
 
-function autoPopulateComments(next) {
+function autoPopulate(next) {
   this.populate('comments').populate('author');
   next();
 }
