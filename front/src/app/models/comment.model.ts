@@ -1,9 +1,10 @@
+import { News } from './news.model';
 import { User } from './user.model';
-import { Comment } from './comment.model';
 
-export class News {
+export class Comment {
   _id: string;
   title: string;
   content: string;
+  new: News;
   author: User;
 }
