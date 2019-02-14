@@ -1,4 +1,5 @@
 let mongoose = require("mongoose");
+
 let Schema = new mongoose.Schema({
   new: {
     type: mongoose.Schema.ObjectId,
@@ -24,8 +25,8 @@ let Schema = new mongoose.Schema({
   }
 });
 
-Schema.pre('findById', autoPopulate)
-Schema.pre('find', autoPopulate)
+Schema.pre('find', autoPopulate);
+Schema.pre('findOne', autoPopulate);
 
 module.exports = mongoose.model("Comments", Schema);
 

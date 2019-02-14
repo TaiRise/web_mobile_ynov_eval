@@ -20,6 +20,6 @@ module.exports = {
       }
     }
   },
-  basedir: __dirname, //app absolute path
-  files: ['./routes/*.js'] //Path to the API handle folder
+  basedir: __dirname,
+  files: ['./routes/*.js']
 };

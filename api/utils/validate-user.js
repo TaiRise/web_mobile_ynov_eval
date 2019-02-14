@@ -14,7 +14,7 @@ exports.isAdmin = (req, res, next) => {
   } else {
     res.status(403).json({
       status: "error",
-      message: "admin required"
+      message: "Admin Required"
     });
   }
 }

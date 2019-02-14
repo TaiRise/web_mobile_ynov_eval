@@ -3,16 +3,16 @@ let mongoose = require('mongoose');
 let bodyParser = require('body-parser');
 let cors = require('cors');
 
+let authController = require('./controllers/auth-controller');
+
 let usersRoutes = require('./routes/users-routes');
 let newsRoutes = require('./routes/news-routes');
 let commentsRoutes = require('./routes/comments-routes');
-let authController = require('./controllers/auth-controller');
 
 let auth = require('./utils/validate-token');
 
 let app = express();
 
-// SWAGGER
 let swag = require('express-swagger-generator')(app);
 let options = require('./swagger');
 swag(options)
