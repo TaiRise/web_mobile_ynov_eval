@@ -28,10 +28,10 @@ let {
 /**
  * @route POST /api/news
  * @group News - Operations about news
- * @property {string} title.required
- * @property {string} content.required
- * @property {id} author.required
- * @property {array} comments
+ * @param {string} title.required
+ * @param {string} content.required
+ * @param {id} author.required
+ * @param {array} comments
  * @returns {object} 200 - An array of event that's been added
  * @returns {Error} - Unexpected error
  */

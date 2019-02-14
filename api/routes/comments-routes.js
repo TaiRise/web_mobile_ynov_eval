@@ -20,10 +20,10 @@ let {
 /**
  * @route POST /api/comments
  * @group Comments - Operations about comments
- * @property {id} new.required
- * @property {string} title.required
- * @property {content} content.required
- * @property {id} author.required
+ * @param {id} new.required
+ * @param {string} title.required
+ * @param {content} content.required
+ * @param {id} author.required
  * @returns {object} 200 - An array of event that's been added
  * @returns {Error} - Unexpected error
  */
