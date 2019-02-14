@@ -35,7 +35,7 @@ export class SignUpComponent implements OnInit {
     this.userService.getAll().subscribe(console.log);
   }
 
-  get formErros(): boolean {
+  get formErrors(): boolean {
     return this.emailValidator.errors ||
       this.passwordValidator.errors ||
       this.confirmPasswordValidator.errors ||

@@ -1,3 +1,17 @@
-<p>
-  login works!
-</p>
+<div class="auth">
+  <h1>Login</h1>
+  <form class="form-auth" #formAuth="ngForm" (ngSubmit)="onSubmit(formAuth, $event)">
+    <mat-form-field>
+      <input matInput #email name="email" [(ngModel)]="login.email" type="text" placeholder="Email" [formControl]="emailValidator"/>
+      <mat-error>Email not valid</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput #password name="password" [(ngModel)]="login.password" type="password" placeholder="Password" [formControl]="passwordValidator" />
+      <mat-error>Wrong Password</mat-error>
+    </mat-form-field>
+    <div>
+      <button [disabled]="formErrors" mat-raised-button color="primary" type="submit">Connect</button>
+    </div>
+  </form>
+</div>

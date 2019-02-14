@@ -1,0 +1,23 @@
+.auth {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  h1 {
+    margin-bottom: 20px;
+  }
+
+  mat-form-field {
+    margin-bottom: 10px;
+  }
+
+  > * {
+    width: 100%;
+  }
+
+  .form-auth {
+    > * {
+      width: 100%;
+    }
+  }
+}
