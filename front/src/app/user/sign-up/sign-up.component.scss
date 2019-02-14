@@ -1,0 +1,23 @@
+.sign-up {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  h2 {
+    margin: 20px 0;
+  }
+
+  mat-form-field {
+    margin-bottom: 10px;
+  }
+
+  > * {
+    width: 100%;
+  }
+
+  .form-user {
+    > * {
+      width: 100%;
+    }
+  }
+}

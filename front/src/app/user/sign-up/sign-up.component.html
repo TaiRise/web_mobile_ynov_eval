@@ -1,3 +1,36 @@
-<p>
-  sign-up works!
-</p>
+<div class="sign-up">
+  <h1>New User</h1>
+  <form class="form-user" #formUser="ngForm" (ngSubmit)="onSubmit(formUser, $event)">
+    <h2>ID</h2>
+
+    <mat-form-field>
+      <input matInput #email name="email" [(ngModel)]="user.mail" type="text" placeholder="Email" [formControl]="emailValidator"/>
+      <mat-error>Email not valid</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput #password name="password" [(ngModel)]="user.password" type="password" placeholder="Password" [formControl]="passwordValidator" />
+      <mat-error>Wrong Password</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput #conformpassword name="confirmpassword" type="password" placeholder="Confirm Password" [disabled]="passwordValidator.errors" [formControl]="confirmPasswordValidator" />
+      <mat-error>Wrong password</mat-error>
+    </mat-form-field>
+
+    <h2>Perso</h2>
+
+    <mat-form-field>
+      <input matInput #name name="name" type="text" [(ngModel)]="user.name" placeholder="Name" [formControl]="nameValidator" />
+      <mat-error>Name required</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput #firstname name="firstname" type="text" [(ngModel)]="user.firstname" placeholder="FirstName" [formControl]="nameValidator" />
+      <mat-error>FirstName required</mat-error>
+    </mat-form-field>
+    <div>
+      <button [disabled]="formErros" mat-raised-button color="primary" type="submit">Add</button>
+    </div>
+  </form>
+</div>
