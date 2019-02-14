@@ -1,4 +1,5 @@
 let mongoose = require("mongoose");
+
 let Schema = new mongoose.Schema({
   title: {
     type: String,
@@ -32,8 +33,8 @@ Schema.virtual('comments', {
   foreignField: 'new'
 })
 
-Schema.pre('findById', autoPopulate)
-Schema.pre('find', autoPopulate)
+Schema.pre('find', autoPopulate);
+Schema.pre('findOne', autoPopulate);
 
 module.exports = mongoose.model("News", Schema);
 

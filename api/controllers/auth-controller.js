@@ -24,7 +24,7 @@ module.exports = (req, res) => {
       });
       res.json({
         success: true,
-        message: 'login OK',
+        message: 'Login OK',
         token
       });
     } else {
